@@ -1,0 +1,77 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html{% if LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}"{% endif %}>
+
+    <head>
+        {% block head_interior %}
+            {% block head_meta %}
+                <meta charset="utf-8" />
+            {% endblock %}
+            <title>{% block head_title %}HEAD TITLE{% endblock %}</title>
+            {% block head_links %}
+                {% block head_links_css %}
+                    <link rel="stylesheet" href="{% static 'site/css/reset.css' %}" />
+                    <link rel="stylesheet" href="{% static 'site/css/oxygen-fonts.css' %}" />
+                    <link rel="stylesheet" href="{% static 'site/css/style.css' %}" />
+                {% endblock %}
+                {% block head_links_script %}
+                    <script type="text/javascript" src="{% static 'admin/js/jquery.min.js' %}"></script>
+                {% endblock %}
+                {% block head_links_extra %}
+                    {# <link rel="alternate" type="application/rss+xml" title="RSS" href="/feeds/latest/" /> #} 
+                {% endblock %}
+            {% endblock %}
+            {% block head_end %}
+                {% include 'gabrielson/includes/head_end.html' %}
+            {% endblock %}
+        {% endblock head_interior %}
+    </head>
+
+    <body>
+        {% block body_interior %}
+            <div id="container">
+                {% block body_container %}
+                    {% block body_header %}
+                        <header>
+                            <hgroup>
+                                {% block header_search %}
+                                    {% include 'gabrielson/includes/search/main.html' %}
+                                {% endblock %}        
+                                <h1>{% block body_title %}<a href="/">BODY TITLE</a>{% endblock %}</h1>
+                                {% block header_navigation %}
+                                    <ul id="nav">
+                                        {% block navigation_items %}
+                                            {% include 'gabrielson/includes/navigation.html' %}
+                                        {% endblock %}
+                                    </ul>
+                                {% endblock %}
+                                {% block header_actions %}
+                                    <ul id="actions">
+                                        {% block header_action_items %}
+                                            {% include 'gabrielson/includes/actions.html' %}
+                                        {% endblock %}
+                                    </ul>
+                                {% endblock %}
+                            </hgroup>
+                        </header>
+                    {% endblock %}
+                    <div>
+                        {% block content %}
+                            <!-- body content block: override this -->
+                        {% endblock %}
+                    </div>
+                    {% block body_footer %}
+                        <footer>
+                            {% block footer_content %}
+                                {% include 'gabrielson/includes/footer.html' %}
+                            {% endblock %}
+                        </footer>
+                    {% endblock %}
+                {% endblock body_container %}
+            </div><!-- end container -->
+            {% block body_end %}
+                {% include 'gabrielson/includes/body_end.html' %}
+            {% endblock %}
+        {% endblock body_interior %}
+    </body>
+
+</html>

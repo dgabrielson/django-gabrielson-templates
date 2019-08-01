@@ -1,0 +1,13 @@
+include requirements.txt
+include README.md
+recursive-include site_templates/static *
+recursive-include site_templates/templates *
+recursive-include gabrielson_standard/static *
+recursive-include gabrielson_standard/templates *
+recursive-include gabrielson_responsive/static *
+recursive-include gabrielson_responsive/templates *
+
+# added by check_manifest.py
+include *.py
+recursive-include gabrielson_standard *.db
+recursive-include gabrielson_standard *.html

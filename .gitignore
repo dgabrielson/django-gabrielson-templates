@@ -1,0 +1,12 @@
+venv
+demo_project/demo_site/demo.db
+demo_project/demo_site/__media
+demo_project/demo_site/__static
+
+
+*.pyc
+*~
+*.kate-swp
+*.egg-info
+*.tar.gz
+.DS_Store

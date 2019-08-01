@@ -1,0 +1,40 @@
+{% url 'hackersdiet-default' as link_url %}
+{% if link_url %}
+    <li>
+        <a href="{{ link_url }}">
+            entry
+        </a>
+    </li>
+{% endif %}
+{% url 'hackersdiet-bmi-latest' who=person.id as link_url %}
+{% if link_url %}
+    <li>
+        <a href="{{ link_url }}">
+            BMI
+        </a>
+    </li>
+{% endif %}
+{% url 'hackersdiet-stats' id=person.id as link_url %}
+{% if link_url %}
+    <li>
+        <a href="{{ link_url }}">
+            stats
+        </a>
+    </li>
+{% endif %}
+{% url 'hackersdiet-chart' id=person.id as link_url %}
+{% if link_url %}
+    <li>
+        <a href="{{ link_url }}">
+            chart
+        </a>
+    </li>
+{% endif %}
+{% url 'hackersdiet-table' id=person.id as link_url %}
+{% if link_url %}
+    <li>
+        <a href="{{ link_url }}">
+            table
+        </a>
+    </li>
+{% endif %}

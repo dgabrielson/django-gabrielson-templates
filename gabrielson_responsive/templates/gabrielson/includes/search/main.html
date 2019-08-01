@@ -1,0 +1,9 @@
+{% url 'haystack_search' as search_url %}
+
+
+{% if search_url %}
+    <!-- Haystack Search -->
+    <form action="{{ search_url }}" method="get">
+        <input type="search" class="right" id="search_field" name="q" value="search"/>
+    </form>
+{% endif %}

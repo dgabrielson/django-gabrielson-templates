@@ -1,0 +1,86 @@
+{% extends "site_base.html" %}
+
+{% block title %}Hacker's Diet{% endblock %}
+
+{% block head_links_icons %}
+<link rel="apple-touch-icon" href="{{ STATIC_URL}}diet/img/hackers_diet-icon.png"/>
+<link rel="apple-touch-startup-image" href="{{ STATIC_URL }}diet/img/startup.png"/>
+{% endblock head_links_icons %}
+
+{% block body_title %}Hacker's Diet{% endblock %}
+{% block home_url %}/diet{% endblock %}
+
+{% block content %}
+
+<article>
+<h1>{% block topbar_title %}Enter your weight{% endblock %}</h1>
+{% if pre_message %}
+<p> 
+    {{ pre_message }}
+</p>
+{% endif %}
+
+{% block page_content %}
+{% if form %}
+<form method="POST" action="." class="form">
+    {% csrf_token %}
+    {# form.as_table #}
+{% if not form.is_valid and form.non_field_errors%}
+            <ul class=errorlist>
+            {% for error in form.non_field_errors %}
+                <li>
+                    {{ error }}
+                </li>
+            {% endfor %}
+            </ul>
+{% endif %}
+{% for hidden in form.hidden_fields %}
+    {{ hidden }}
+{% endfor %}
+{% for field in form.visible_fields %}
+    <p class="{{ field.auto_id }}{% if field.field.widget.attrs.class %} {{ field.field.widget.attrs.class }}{% endif %}{% if forloop.first and visual_break %} visual-break{% endif %}">
+        <label for="{{ field.auto_id }}"{% if not field.field.required %} class="optional"{% endif %}>
+            {{ field.label }}
+        </label>
+        <br>
+        {% if field.errors %}
+            <ul for="{{ field.auto_id }}" class="errorlist" id="errors-{{ field.html_name }}">
+                {% for error in field.errors %}
+                    <li>{{ error }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {{ field }}
+        {% if field.help_text %}<br>
+            <span for="{{ field.auto_id }}" id="help-text-{{ field.html_name }}" class="help">
+                {{ field.help_text|safe }}
+            </span>
+        {% endif %}
+    </p>
+{% endfor %}
+
+    <div class="submit">
+        <button class="button-blue" type="submit" name="action" title="Save" value="Save">Save</button>
+    </div>
+
+    </form>
+
+{% endif %}
+{% endblock page_content %}
+</article>
+
+{% if post_message %}
+<aside>
+<p>
+{{ post_message }}
+</p>
+</aside>
+{% endif %}
+
+<aside>
+    <ul>
+        {% include 'diet/subnav.html' %}
+    </ul>
+</aside>
+
+{% endblock content %}

@@ -1,0 +1,124 @@
+{% load staticfiles %}<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ LANGUAGE_CODE }}"> <!--<![endif]-->
+    <head>{% block head_interior %}
+        {% block head_meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{% block head_meta_description %}{% endblock %}">
+        <meta name="keywords" content="{% block head_meta_keywords %}{% endblock %}">
+        <meta name="author" content="{% block head_meta_author %}{% endblock %}">
+        {% endblock head_meta %}
+        <title>{% block head_title %}HEAD TITLE{% endblock %}</title>
+        {% block head_links %}
+        {% block head_links_icons %}
+        <link rel="apple-touch-icon" href="{% static 'site/img/apple-touch-icon.png' %}">
+        {% endblock head_links_icons %}
+        {% block head_links_css %}
+        <link rel="stylesheet" href="{% static 'site/css/normalize.min.css' %}">
+        <link rel="stylesheet" href="{% static 'site/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'site/css/flexmenu.css' %}">
+        <link rel="stylesheet" href="{% static 'site/css/form.css' %}">
+        <link rel="stylesheet" href="{% static 'site/css/site_extra.css' %}">
+        <link rel="stylesheet" href="{% static 'site/css/colour.css' %}">
+        {% endblock head_links_css %}
+        {% block head_links_script %}
+        <script src="{% static 'site/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+        {% endblock head_links_script %}
+        {% block head_links_extra %}
+        {# <link rel="alternate" type="application/rss+xml" title="RSS" href="/feeds/latest/" /> #} 
+        {% endblock %}
+        {% endblock head_links %}
+        {% block head_extra %}
+        {% endblock head_extra %}
+    {% endblock head_interior %}</head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block body_interior %}
+        {% block body_container %}
+        {% block body_header %}
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                {% block header_navigation %}
+                <nav id="flexmenu">
+                    <div class="logo">
+                      <h1>{% block body_title %}h1.title{% endblock %}</h1>
+                    </div>
+
+                    <div id="mobile-toggle" class="button"></div>
+                    <ul id="main-menu">
+                        {% block navigation_items %}
+                            {% include 'gabrielson/includes/navigation.html' %}
+                        {% endblock %}
+                        {% block header_actions %}
+                            <li><a href="#">{% block nav_action_label %}More{% endblock %}</a>
+                                {# there needs to be a top level li element before a nested ul #}
+                                <ul class="sub-menu">
+                                    {% block header_action_items %}
+                                        {% include 'gabrielson/includes/actions.html' %}
+                                    {% endblock %}
+                                </ul>
+                            </li>
+                        {% endblock %}
+                    </ul>
+                </nav>
+                {% endblock header_navigation %}
+                {% block header_search %}
+                    {# include 'gabrielson/includes/search/main.html' #}
+                {% endblock %}        
+            </header>
+        </div>
+        {% endblock body_header %}
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+                {% block content %}
+                <article>
+                    <header>
+                        <h1>article header h1</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
+                    </header>
+                    <section>
+                        <h2>article section h2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                    </section>
+                    <section>
+                        <h2>article section h2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                    </section>
+                    <footer>
+                        <h3>article footer h3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+                    </footer>
+                </article>
+
+                <aside>
+                    <h3>aside</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+                {% endblock content %}
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        {% block body_footer %}
+        <div class="footer-container">
+            <footer class="wrapper">
+            {% block footer_content %}
+                {% include 'gabrielson/includes/footer.html' %}
+            {% endblock %}
+            </footer>
+        </div>
+        {% endblock body_footer %}
+        {% block body_end %}
+            {% include 'gabrielson/includes/body_end.html' %}
+        {% endblock %}
+
+    {% endblock body_container %}
+    {% endblock body_interior %}
+    </body>
+</html>

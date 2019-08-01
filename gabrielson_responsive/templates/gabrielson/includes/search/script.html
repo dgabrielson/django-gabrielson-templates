@@ -1,0 +1,20 @@
+{# make this search field look pretty #}
+{# not required, but nice #}
+
+
+{# requires jquery.min.js #}
+<script type="text/javascript">
+    $(function() {
+        $("#search_field").focus(function() {
+            if ($(this).val() == "search") {
+                $(this).val("");
+            }
+        }).blur(function() {
+            if ($(this).val() == "") {
+                $(this).val("search");
+            }
+        });
+    });
+</script>
+
+

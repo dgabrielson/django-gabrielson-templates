@@ -1,0 +1,44 @@
+{% extends 'site_base.html' %}
+
+{% block head_title %}Gabrielson.CA - Search{% if query %} Results{% endif %}{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Search{% if query %} Results{% endif %}</h1>
+        
+        {% if query %}
+            <small>
+                Your search for
+                &ldquo;{{ query }}&rdquo;
+                returned {{ paginator.count }} results.
+            </small>
+    
+            <ul>
+            {% for result in page.object_list %}
+                <li>
+                    <a href="{{ result.object.get_absolute_url }}">
+                        {{ result.object }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        
+            {% include 'site_pagination.html' with page_obj=page object_name='search results' paginated_query='q='|add:query %}
+            
+        {% else %}
+    
+            <form method="get" action=".">
+                <table class="table-form">
+                    {{ form }}
+                    <tr class="submit-row">
+                        <td>
+                            <input type="submit" value="Search">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    
+        {% endif %}
+
+    </section>
+{% endblock %}

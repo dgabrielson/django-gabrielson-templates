@@ -1,0 +1,2 @@
+remote_addr: {{ request.META.REMOTE_ADDR }}
+{% if request.META.QUERY_STRING %}{{ request.META_QUERY_STRING }}{% endif %}

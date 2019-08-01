@@ -1,0 +1,19 @@
+{% if request.user.is_authenticated %}
+   {% if user.is_staff %}
+        <li>
+            <a href="{% url 'admin:index' %}">
+                admin
+            </a>
+        </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'user-profile' %}">profile</a>
+    </li>
+    <li>
+        <a href="{% url 'site-logout' %}">log out</a>
+    </li>
+{% else %}
+    <li>
+        <a href="{% url 'site-login' %}">log in</a>
+    </li>
+{% endif %}

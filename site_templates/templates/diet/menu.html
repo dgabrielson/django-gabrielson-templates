@@ -1,0 +1,13 @@
+{% url 'hackersdiet-default' as link_url %}
+{% if link_url %}
+<li>
+    <a href="{{ link_url }}">
+        diet
+    </a>
+    {% if person %}
+        <ul class="sub-menu">
+            {% include 'diet/subnav.html' %}
+        </ul>
+    {% endif %}
+</li>
+{% endif %}

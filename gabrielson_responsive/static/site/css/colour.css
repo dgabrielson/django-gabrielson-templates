@@ -1,0 +1,110 @@
+/* #194b46;  6475 Country Squire - section header */
+/* #b8b8b5;  7658 Gray Clouds - main background / header nav hover */ 
+/* #007187;  6943 Intense Teal - section header link */
+/* #dac192;  6128 Blonde - link hover */
+/* #eeede7;  7005 Pure White - container background */
+/* #095879;  6503 Bosporus - header border */
+/* #005685;  6790 Adriatic Sea - header background */
+/* #aaa394;  7045 Intellectual Gray - header visited link */
+
+body {
+    background: #eeede7; /* 7005 Pure White - container background */ 
+}
+
+
+.header-container {
+    border-bottom: 20px solid #007187;  /* 6943 Intense Teal - header border */
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #007187;  /* 6943 Intense Teal - footer border */
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #005685; /* 6790 Adriatic Sea - header background */
+}
+
+.title {
+    color: #eeede7; /* text fg colour */
+}
+
+.logo {
+    color: #aaa394; /* text fg colour */
+}
+
+
+nav a {
+    background: #005685; /* 6790 Adriatic Sea - header background */
+}
+
+nav a:hover,
+nav a:visited {
+    color: #dac192;  /* 6128 Blonde - link hover */
+}
+
+
+.main aside {
+    color: #eeede7; /* text fg colour */
+}
+
+
+.footer-container footer {
+    color: #eeede7;   /* text fg colour */
+}
+
+
+header h1 a, header h1 a:visited{
+    color: #aaa394; /* 7045 Intellectual Gray */
+}
+
+
+h1 a, h1 a:visited {
+    color: #194b46; /* 6475 Country Squire */
+}
+
+
+a, a:visited {
+    color: #666666;
+}
+
+a:hover {
+    color: #999999,
+}
+
+article a {
+    color: #007187; /* 6943 Intense Teal */
+}
+
+article a:hover {
+    color: #dac192; /* 6128 Blonde */
+}
+
+aside a, aside a:visited {
+    color: #aaa394; /* 7045 Intellectual Gray */
+}
+
+aside a:hover {
+    color: #dac192; /* 6128 Blonde */
+}
+
+
+#flexmenu ul li.has-sub > a:after {
+    background: #007187;
+}
+#flexmenu ul ul li.has-sub > a:after {
+    background: #007187;
+}
+#flexmenu ul ul li {
+     background: #007187;
+}
+
+.button.menu-opened {
+    background: #007187;
+}
+
+.button {
+    background: #aaa394;
+}

@@ -1,0 +1,11 @@
+{% extends request.iOS.iPhone|yesno:'iwebkit/login.html,site_login.html' %}
+
+{% comment %}
+
+This template is basically a 'proxy' to either an iwebkit login or a 
+standard login template.
+
+If the browser is an iPhone (or iPod touch) use the iwebkit version,
+otherwise, use the standard version.
+
+{% endcomment %}

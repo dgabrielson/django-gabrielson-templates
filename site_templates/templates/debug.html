@@ -1,0 +1,18 @@
+{% extends 'site_base.html' %}
+
+
+{% block content %}
+
+<section>
+    <h1>Debug</h1>
+    
+    <pre>
+perms = {{ perms }}
+
+        {% filter force_escape %}
+{% debug %}
+        {% endfilter %}
+    </pre>
+</section>
+
+{% endblock content %}

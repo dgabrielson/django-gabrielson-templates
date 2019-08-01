@@ -1,0 +1,73 @@
+{# ######################################################### #}
+{% comment %}
+    It may be useful to include this using the with parameter
+    This fragment expects the following variables:
+
+    ``page_obj`` - the page.
+    ``paginator`` - the paginator
+    ``object_name`` - the name of the thing being paginated
+
+    And will make use of the following (optional) variables
+    well:
+
+    ``paginated_base_url`` - the url to link to for pagination.
+                            (Typically not used.)
+    ``paginated_query`` - a query string to also include in
+                            pagination links.
+{% endcomment %}
+{# ######################################################### #}
+
+{% if paginator.num_pages != 1 %}
+    <small>
+    <div class="pagination">
+
+        <span class="page-current">
+            Showing page {{ page_obj.number }} of {{ paginator.num_pages }}.
+        </span>
+        <span class="total-in-list">
+             There are {{ paginator.count }} {{ object_name|default:"objects" }} total.
+        </span>
+
+
+        <div class="page-links">
+            {% if page_obj.number != 1 %}
+                <a href="{{ paginated_base_url }}?{% if paginated_query %}{{ paginated_query }}&{%endif %}page=1">
+                    First page
+                </a>
+            {% else %}
+                    First page
+            {% endif %}
+
+            &nbsp; | &nbsp;
+
+            {% if page_obj.has_previous %}
+                <a href="{{ paginated_base_url }}?{% if paginated_query %}{{ paginated_query }}&{%endif %}page={{ page_obj.previous_page_number }}">
+                    &larr; Previous page
+                </a>
+            {% else %}
+                    &larr; Previous page
+            {% endif %}
+
+            &nbsp; | &nbsp;
+
+            {% if page_obj.has_next %}
+                <a href="{{ paginated_base_url }}?{% if paginated_query %}{{ paginated_query }}&{%endif %}page={{ page_obj.next_page_number }}">
+                    Next page &rarr;
+                </a>
+            {% else %}
+                    Next page &rarr;
+            {% endif %}
+
+            &nbsp; | &nbsp;
+
+            {% if page_obj.number != paginator.num_pages %}
+                <a href="{{ paginated_base_url }}?{% if paginated_query %}{{ paginated_query }}&{%endif %}page={{ paginator.num_pages }}">
+                    Last page
+                </a>
+            {% else %}
+                    Last page
+            {% endif %}
+        </div>
+
+    </div></small>
+{% endif %}

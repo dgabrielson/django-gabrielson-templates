@@ -1,0 +1,16 @@
+.right {
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+    /* Remove the logo and remove the bar */
+    .logo {
+        display: none;
+    }
+    .main {
+        padding-top: 0px;
+    }
+    .main article {
+        padding-bottom: 20px;
+    }
+}

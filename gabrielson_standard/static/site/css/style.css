@@ -1,0 +1,229 @@
+body {
+    font: 18px/27px 'OxygenRegular', Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 16pt;
+    background: #b8b8b5; /* 7658 Gray Clouds */
+}
+
+a, a:visited {
+    color: #666666;
+}
+
+a:hover {
+    color: #999999,
+}
+
+h1 {
+    font-size: 24pt;
+    font-family: 'OxygenBold', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 21pt;
+}
+
+h3 {
+    font-size: 18pt;
+    margin-top: 10px;
+}
+
+h1 a, h1 a:visited {
+    color: #194b46; /* 6475 Country Squire */
+}
+
+ul {
+    list-style: disc;
+}
+
+li {
+    margin-left: 2em;
+}
+
+p, h1, h2, h3, ul {
+    margin-bottom: 0.65em;
+    font: 16px/23px 'OxygenRegular', Arial, sans-serif;
+}
+
+section {
+    margin-top: 2em;
+    margin: 18px 100px;
+}
+
+section h1 {
+    font-size: 20pt;
+    color: #194b46; /* 6475 Country Squire */
+    margin-bottom: 8px;
+    font: 32px/36px 'OxygenBold', Arial, sans-serif;
+}
+
+
+section h1 a {
+    color: #007187; /* 6943 Intense Teal */
+    text-decoration: none;
+}
+
+section h1 a:hover{
+    color: #dac192; /* 6128 Blonde */
+}
+
+
+section h2 {
+    color: #194b46; /* 6475 Country Squire */
+    font: 20px/26px 'OxygenBold', Arial, sans-serif;
+}
+
+
+section a {
+    color: #007187; /* 6943 Intense Teal */
+}
+
+section a:hover{
+    color: #dac192; /* 6128 Blonde */
+}
+
+section small {
+    font-size: 10pt;
+    color: gray;
+}
+
+section div.highlight {
+    padding: 10px 0px 20px 25px;
+}
+
+#container {
+    margin: 18px auto;
+    width: 700px;
+    background: #eeede7; /* 7005 Pure White */
+    padding: 20px;
+    -moz-box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
+}
+
+header {
+    margin: -20px -20px 20px -20px;
+    border-top: 2px solid #095879; /* 6503 Bosporus */
+    padding: 20px;
+    background: #005685; /* 6790 Adriatic Sea */
+}
+
+header h1 {
+    color: #194b46; /* 6475 Country Squire */
+    font-size: 28pt;
+    bold 28px/36px 'OxygenBold', Arial, sans-serif;
+    -moz-text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.6);
+    -webkit-text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.6);
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
+header h1 a, header h1 a:visited{
+    color: #aaa394; /* 7045 Intellectual Gray */
+}
+
+
+header h1 a:hover{
+    color: #dac192; /* 6128 Blonde */
+}
+
+header #nav {
+    display: inline;
+    list-style-type: none;
+    list-style: none;
+    font: 100 18px/18px 'OxygenRegular', Arial, sans-serif;
+}
+
+header #nav li {
+    display: inline;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+header #nav li a {
+    padding-top: 10px;
+    color: #eeede7; /* 7005 Pure White */
+    text-decoration: none;
+}
+
+header #nav li a:hover {
+    color: #b8b8b5; /* 7658 Gray Clouds */
+}
+
+header #actions {
+    display: inline;
+    float: right;
+    list-style-type: none;
+    list-style: none;
+    font: 100 18px/18px 'OxygenRegular', Arial, sans-serif;
+}
+
+header #actions li {
+    display: inline;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+header #actions li a {
+    padding-top: 10px;
+    color: #eeede7; /* 7005 Pure White */
+    text-decoration: none;
+}
+
+header #actions li a:hover {
+    color: #b8b8b5; /* 7658 Gray Clouds */
+}
+
+
+footer {
+    margin: 0 -20px -20px -20px;
+    padding: 10px;
+    background: #005685; /* 6790 Adriatic Sea */
+}
+
+footer p {
+    color: #eeede7; /* 7005 Pure White */
+}
+
+footer p img {
+    margin-bottom: -5px;
+}
+
+div.highlight {
+    background-color: #dac192; /* 6128 Blonde */
+    border: 5px solid #b8b8b5; /* 7658 Gray Clouds */
+    margin: 20px;
+    overflow: auto;
+    padding: 5px;
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.right {
+    float: right;
+}
+
+img {
+    margin-bottom: 5px;
+}
+
+blockquote {
+    border-left: 3px solid #b8b8b5; /* 7658 Gray Clouds */
+    margin: 0 0 .5em 1em;
+    padding: 0 2em 0 .5em;
+}
+
+th {
+    text-align: left;
+    padding-right: 0.75em;
+}
+
+td {
+    padding-right: 0.5em;
+}
+
